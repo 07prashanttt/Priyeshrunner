@@ -1,0 +1,9 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="110" fill="#080d20"/>
+  <path d="M90 350 L180 110 L256 250 L332 110 L422 350"
+        fill="none" stroke="#00d9ff" stroke-width="38"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="256" y="435" font-size="65" text-anchor="middle"
+        font-weight="bold" fill="white">PR</text>
+</svg>
