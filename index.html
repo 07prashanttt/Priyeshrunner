@@ -4,42 +4,118 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
   <meta name="theme-color" content="#080d20">
+  <meta name="description" content="PRASHANT RUNNER 3D - Endless Running Game">
+
   <title>PRASHANT RUNNER 3D</title>
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="style.css">
+
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+
 </head>
+
 <body>
+
+  <!-- GAME HUD -->
   <div id="hud">
-    <div class="brand">PRASHANT RUNNER <span>3D</span></div>
+
+    <div class="brand">
+      PRASHANT RUNNER <span>3D</span>
+    </div>
+
     <div class="stats">
       <div>🪙 <b id="coins">0</b></div>
       <div>🏆 <b id="score">0</b></div>
     </div>
+
   </div>
 
+
+  <!-- START SCREEN -->
   <div id="startScreen" class="overlay">
-    <h1>PRASHANT<br><span>RUNNER 3D</span></h1>
+
+    <h1>
+      PRASHANT<br>
+      <span>RUNNER 3D</span>
+    </h1>
+
     <p>Run • Jump • Slide • Collect Coins</p>
-    <button id="startBtn">PLAY NOW ▶</button>
+
+    <button id="startBtn">
+      PLAY NOW ▶
+    </button>
+
     <small>Built by Prashant</small>
+
   </div>
 
+
+  <!-- GAME OVER SCREEN -->
   <div id="gameOver" class="overlay hidden">
+
     <h1>GAME OVER</h1>
-    <p>Your Score: <b id="finalScore">0</b></p>
-    <p>Coins: <b id="finalCoins">0</b></p>
-    <button id="restartBtn">PLAY AGAIN ↻</button>
+
+    <p>
+      Your Score:
+      <b id="finalScore">0</b>
+    </p>
+
+    <p>
+      Coins:
+      <b id="finalCoins">0</b>
+    </p>
+
+    <button id="restartBtn">
+      PLAY AGAIN ↻
+    </button>
+
   </div>
 
+
+  <!-- MOBILE CONTROLS -->
   <div id="controls">
+
     <button id="leftBtn">◀</button>
+
     <button id="jumpBtn">▲</button>
+
     <button id="slideBtn">▼</button>
+
     <button id="rightBtn">▶</button>
+
   </div>
 
-  <div id="credit">BUILT BY PRASHANT</div>
-  <script type="module" src="game.js"></script>
+
+  <!-- CREDIT -->
+  <div id="credit">
+    BUILT BY PRASHANT
+  </div>
+
+
+  <!-- THREE.JS GAME -->
+  <script type="module" src="./game.js"></script>
+
+
+  <!-- SERVICE WORKER REGISTRATION -->
+  <script>
+    if ('serviceWorker' in navigator) {
+
+      window.addEventListener('load', () => {
+
+        navigator.serviceWorker.register('./sw.js')
+          .then(() => {
+            console.log('PRASHANT RUNNER PWA Ready!');
+          })
+          .catch(error => {
+            console.log('Service Worker Error:', error);
+          });
+
+      });
+
+    }
+  </script>
+
 </body>
 </html>
