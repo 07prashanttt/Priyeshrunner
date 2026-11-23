@@ -1,0 +1,153 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  overflow: hidden;
+  background: #080d20;
+  font-family: Arial, sans-serif;
+  color: white;
+  touch-action: none;
+}
+
+canvas {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+#hud {
+  position: absolute;
+  z-index: 2;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+}
+
+.brand {
+  font-weight: 900;
+  font-size: 17px;
+  text-shadow: 0 2px 8px #000;
+}
+
+.brand span {
+  color: #00e5ff;
+}
+
+.stats {
+  display: flex;
+  gap: 12px;
+}
+
+.stats div {
+  background: #101b35dd;
+  border: 1px solid #ffffff40;
+  border-radius: 12px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #05091bdc;
+  padding: 20px;
+}
+
+.overlay h1 {
+  font-size: clamp(38px, 10vw, 65px);
+  font-weight: 1000;
+  line-height: 1.1;
+  text-shadow: 0 5px 20px #000;
+}
+
+.overlay h1 span {
+  color: #00e5ff;
+}
+
+.overlay p {
+  margin: 15px 0;
+  font-size: 16px;
+}
+
+.overlay small {
+  margin-top: 25px;
+  color: #aaa;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  font-weight: 900;
+  color: white;
+}
+
+.overlay button {
+  background: linear-gradient(120deg, #00b4ff, #6248ff);
+  padding: 16px 38px;
+  border-radius: 30px;
+  font-size: 18px;
+  margin-top: 20px;
+  box-shadow: 0 5px 25px #0066ff66;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#controls {
+  position: fixed;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  gap: 13px;
+}
+
+#controls button {
+  width: 57px;
+  height: 57px;
+  border-radius: 50%;
+  background: #14284ddd;
+  border: 2px solid #00d9ff;
+  font-size: 22px;
+  box-shadow: 0 4px 15px #0008;
+  touch-action: none;
+}
+
+#controls button:active {
+  background: #007bff;
+  transform: scale(.92);
+}
+
+#credit {
+  position: fixed;
+  z-index: 2;
+  bottom: 8px;
+  right: 12px;
+  font-size: 9px;
+  color: #ffffff88;
+  pointer-events: none;
+}
+
+@media (max-height: 500px) {
+  #controls { bottom: 8px; }
+  #controls button { width: 45px; height: 45px; }
+}
